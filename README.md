@@ -41,3 +41,8 @@ sleeping
 [EXIT] PID 72446 s-a terminat.
 --- Trace finalizat ---
 ```
+
+# intrebari
+- ce afiseaza daca se scoate \n de la printd
+- cum se poate ca sa afiseze numarul mare inaintea numarului mic
+
