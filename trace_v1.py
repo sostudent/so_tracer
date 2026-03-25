@@ -36,8 +36,6 @@ def trace_program(executable_path, args):
             if event.__class__.__name__ == "ProcessExit":
                 print(f"[EXIT] PID {pid_curr} s-a terminat.")
                 if pid_curr in syscall_state: del syscall_state[pid_curr]
-                if has_forked and len(debugger.list) == 1 and pid_parent in debugger.dict:
-                    debugger.dict[pid_parent].cont()
                 continue
 
             if event.__class__.__name__ == "NewProcessEvent":
@@ -47,7 +45,14 @@ def trace_program(executable_path, args):
                 regs = current_proc.getregs()
                 print(f"[FORK] PID {pid_curr} (CHILD) -> Rezultat: {regs.rax}")
                 syscall_state[pid_curr] = 1 
+                
+                # Resume the child process
                 current_proc.syscall()
+                
+                # Resume the parent process which was left halted by the fork event
+                if hasattr(current_proc, 'parent') and current_proc.parent:
+                    current_proc.parent.syscall()
+                
                 continue
 
             # Alternăm între intrare (0) și ieșire (1)
