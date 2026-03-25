@@ -1,6 +1,6 @@
 # tracer
 tracer for running executables in linux
-$ install and run instuctions
+# install and run instuctions
 ```
 pip3 install python-ptrace
 gcc ex_1.c
