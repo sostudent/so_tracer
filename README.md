@@ -7,6 +7,8 @@ pip3 install python-ptrace
 gcc ex_1.c
 python3 trace_v1.py
 ```
+
+ISO to install linux in a virtual machine: "https://mirrors.nxthost.com/rocky/9/isos/x86_64/Rocky-9.7-x86_64-minimal.iso"
 # requirements
 ```
 python3
