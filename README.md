@@ -1,5 +1,11 @@
 # tracer
 tracer for running executables in linux
+$ install and run instuctions
+```
+pip3 install python-ptrace
+gcc ex_1.c
+python3 trace_v1.py
+```
 # requirements
 ```
 python3
