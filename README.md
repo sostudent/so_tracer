@@ -1,5 +1,6 @@
 # tracer
 tracer for running executables in linux
+it does't work on mac or windows
 # install and run instuctions
 ```
 pip3 install python-ptrace
