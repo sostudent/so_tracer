@@ -25,8 +25,33 @@ int main(void){
 	printf("%d\n", pid1);
 }
 ```
-
-# output example for that simple c program
+# output example from v2 for the tracer (it has collors + alignemnt, looks better in terminal)
+```
+--- Trace activ pe PID 9309 ---
+[PID 9309] [WRITE] FD 1: b'sleeping\n'
+sleeping
+ └─ [PID 9311] [FORK ] (CHILD)  -> Rezultat: 0
+[PID 9309] [FORK ] (PARENT) -> Rezultat: 9311
+pid1 9311
+[PID 9309] [WRITE] FD 1: b'pid1 9311\n'
+[PID 9309] [EXIT ] Procesul s-a terminat.
+   └─ [PID 9316] [FORK ] (CHILD)  -> Rezultat: 0
+ └─ [PID 9311] [FORK ] (PARENT) -> Rezultat: 9316
+pid2 9316
+ └─ [PID 9311] [WRITE] FD 1: b'pid2 9316\n'
+pid1 0
+sleep 1
+ └─ [PID 9311] [WRITE] FD 1: b'pid1 0\n'
+   └─ [PID 9316] [WRITE] FD 1: b'sleep 1\n'
+ └─ [PID 9311] [EXIT ] Procesul s-a terminat.
+pid2 0
+   └─ [PID 9316] [WRITE] FD 1: b'pid2 0\n'
+pid1 0
+   └─ [PID 9316] [WRITE] FD 1: b'pid1 0\n'
+   └─ [PID 9316] [EXIT ] Procesul s-a terminat.
+--- Trace finalizat ---
+```
+# output example for that simple c program from v1 of the tracer
 ```
 --- Trace activ pe PID 72446 ---
 [WRITE] PID 72446 (FD 1): b'sleeping\n'
