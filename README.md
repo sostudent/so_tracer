@@ -43,6 +43,6 @@ sleeping
 ```
 
 # intrebari
-- ce afiseaza daca se scoate \n de la printd
+- ce afiseaza daca se scoate \n de la printf
 - cum se poate ca sa afiseze numarul mare inaintea numarului mic
 
