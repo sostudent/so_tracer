@@ -37,7 +37,7 @@ def clean_data(text):
     return "[Binary/Large]"
 
 def main():
-    print("--- Parser activ (Pipe Tracking Fix) ---", flush=True)
+    print("--- Parser activ (Pipe Tracking) ---", flush=True)
     
     for line in sys.stdin:
         line = line.strip()
