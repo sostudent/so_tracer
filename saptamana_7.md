@@ -75,3 +75,6 @@ Un proces care creaza trei procese, apoi cele 3 procese creaza la randul lor alt
  - pidul procesului parinte
  - pidurile celorlalte 8 procese de pe ultimul nivel (nu conteaza ordinea)
  - pidurile celorlalte 2 procese de pe nivelul 2 care nu sunt parintele direct (nu conteaza ordinea)
+
+# nivel 6
+Un proces care creaza 3 procese, apoi cele 3 procese creaza la randul lor alte 3 procese, iar procesul initial afieaza cele 10 puduri pentru toate cele 10 procese create (nu conteaza ordinea in care se afiseaza pidurile).
