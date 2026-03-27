@@ -29,7 +29,7 @@ int rd_wr() {
 
 
 # nivel -1
-2.2. Compilati si rulati programul de mai jos si explicati rezultatul. Apoi modificati programul astfel incat sa functioneze corect (dupa ce identificati problema).
+2.2. Compilati si rulati programul de mai jos si explicati rezultatul. Apoi modificati programul astfel incat sa functioneze corect (dupa ce identificati multiplele probleme, cel putin doua).
 ```c
 #include <fcntl.h>
 #include <unistd.h>
