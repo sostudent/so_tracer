@@ -19,6 +19,7 @@ ISO to install linux in a virtual machine:
 
 What to run in the new installed virtual machine
 ```bash
+# (hostname -I will show the local IP for the new virtual machine so that you can connect directly with ssh to it)
 hostname -I
 # (after getting the IP, connect with ssh to the new virtual machine for easier access)
 ssh IP_OF_THE_VIRTUAL_MACHINE
