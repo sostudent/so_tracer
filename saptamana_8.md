@@ -31,7 +31,7 @@ static void sig_alarm_custom(int sig)
 }
 ```
 
-#nivel -2
+# nivel -2
 De compilat, rulat si de trimis un semnal cu `kill -SIGUSR1 [PID process]`
 ```c
 #include <stdio.h>
