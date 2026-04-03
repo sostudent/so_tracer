@@ -1,6 +1,6 @@
 ## probleme in fuctie de nivelul de cunostinte
 
-# nivel -2
+# nivel -3
 De compilat, rulat si de trimis un semnal cu `kill -14 [PID process]`
 ```c
 #include <setjmp.h>
@@ -28,6 +28,36 @@ static void sig_alarm_custom(int sig)
 {
         printf("semnal primit %d\n", sig);
         exit(1);
+}
+```
+
+#nivel -2
+De compilat, rulat si de trimis un semnal cu `kill -SIGUSR1 [PID process]`
+```c
+#include <stdio.h>
+#include <signal.h>
+#include <unistd.h>
+
+void signal_handler(int sig, siginfo_t *info, void *context) {
+    printf("Received signal %d from PID: %d\n", sig, info->si_pid);
+}
+
+int main() {
+    struct sigaction sa;
+
+    sa.sa_flags = SA_SIGINFO;        
+    sa.sa_sigaction = signal_handler; 
+    sigemptyset(&sa.sa_mask);
+
+    if (sigaction(SIGUSR1, &sa, NULL) == -1) {
+        printf("sigaction error");
+        return 1;
+    }
+
+    printf("My PID is %d. Waiting for SIGUSR1...\n", getpid());
+    while(1) pause();
+
+    return 0;
 }
 ```
 
