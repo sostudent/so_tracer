@@ -7,8 +7,10 @@ It only parses the output from strace
 gcc ex_1.c
 strace -f -tt -e trace=write,read,fork,clone,execve -s 100 -o output.txt ./a.out
 strace -f -tt -e trace=write,read,fork,clone,execve,pipe,pipe2,open,close -s 100 -o output.txt ./a.out parametru
-strace -f -tt -e trace=write,read,fork,clone,execve,pipe,pipe2,open,close,pause,signal,rt_sigaction,wait4,alarm -s 100 -o output.txt ./a.out parametru
 cat output.txt | python3 parse_strace_v3.py
+
+strace -f -tt -e trace=write,read,fork,clone,execve,pipe,pipe2,open,close,pause,signal,rt_sigaction,wait4,alarm -s 100 -o output.txt ./a.out parametru
+cat output.txt | python3 parse_strace_v4.py
 
 (not working properly)
 stdbuf -oL strace -f -tt -e trace=write,read,fork,clone,openat,exit_group,execve,pipe,pipe2,open,close ./a.out parametru 2>&1 | python3 parse_strace_v3.py
