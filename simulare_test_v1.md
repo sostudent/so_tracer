@@ -1,5 +1,7 @@
 ## Fifierele cu rezolvarea trebuie sa aiba un nume care se termina cu numarul nivelului si .c, de exemplu: l0.c, l1.c, n2.c, nivel4.c.
 
+## Pentru afisarea pidurilor, trebuie pus spatiu inainte si dupa pid la printf/write.
+
 # nivel 0
 Un proces care creaza alt proces iar noul proces creat afiseaza pidul procesului parinte.
 
